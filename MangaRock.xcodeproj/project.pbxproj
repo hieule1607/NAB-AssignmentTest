@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFFE3D102255B4FB00A86C31 /* MRMangaInfoAuthorSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE3D0F2255B4FB00A86C31 /* MRMangaInfoAuthorSectionController.swift */; };
+		AFFE3D132255B5A800A86C31 /* MRMangaInfoAuthorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE3D112255B5A800A86C31 /* MRMangaInfoAuthorCollectionViewCell.swift */; };
+		AFFE3D142255B5A800A86C31 /* MRMangaInfoAuthorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFFE3D122255B5A800A86C31 /* MRMangaInfoAuthorCollectionViewCell.xib */; };
+		AFFE3D172255C62500A86C31 /* MRMangaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE3D162255C62500A86C31 /* MRMangaViewModel.swift */; };
+		AFFE3D192255CCE700A86C31 /* MRCharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE3D182255CCE700A86C31 /* MRCharacterViewModel.swift */; };
+		AFFE3D1C2255E9D000A86C31 /* MRMangaInfoDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE3D1A2255E9D000A86C31 /* MRMangaInfoDescriptionCollectionViewCell.swift */; };
+		AFFE3D1D2255E9D000A86C31 /* MRMangaInfoDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFFE3D1B2255E9D000A86C31 /* MRMangaInfoDescriptionCollectionViewCell.xib */; };
+		AFFE3D252255EFC600A86C31 /* MRDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE3D242255EFC600A86C31 /* MRDescriptionViewModel.swift */; };
+		AFFE3D272255F0A900A86C31 /* MRMangaInfoDescriptionSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE3D262255F0A900A86C31 /* MRMangaInfoDescriptionSectionController.swift */; };
+		AFFE3D2A22560FD200A86C31 /* MRCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE3D2822560FD200A86C31 /* MRCharacterCollectionViewCell.swift */; };
+		AFFE3D2B22560FD200A86C31 /* MRCharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFFE3D2922560FD200A86C31 /* MRCharacterCollectionViewCell.xib */; };
+		AFFE3D54225625C000A86C31 /* TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE3D53225625C000A86C31 /* TextSize.swift */; };
 		F2C054D701B4799170B36445 /* Pods_MangaRock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2AFC3768312DD8EA6E130B /* Pods_MangaRock.framework */; };
 		F971180A221F02D7003F57B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97117FF221F02D7003F57B5 /* Assets.xcassets */; };
 		F9711810221F0355003F57B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9711812221F0355003F57B5 /* LaunchScreen.storyboard */; };
@@ -23,6 +35,18 @@
 /* Begin PBXFileReference section */
 		39A430B50EE43EB20323A984 /* Pods-MangaRock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaRock.release.xcconfig"; path = "Pods/Target Support Files/Pods-MangaRock/Pods-MangaRock.release.xcconfig"; sourceTree = "<group>"; };
 		5D2AFC3768312DD8EA6E130B /* Pods_MangaRock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MangaRock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFFE3D0F2255B4FB00A86C31 /* MRMangaInfoAuthorSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRMangaInfoAuthorSectionController.swift; sourceTree = "<group>"; };
+		AFFE3D112255B5A800A86C31 /* MRMangaInfoAuthorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRMangaInfoAuthorCollectionViewCell.swift; sourceTree = "<group>"; };
+		AFFE3D122255B5A800A86C31 /* MRMangaInfoAuthorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRMangaInfoAuthorCollectionViewCell.xib; sourceTree = "<group>"; };
+		AFFE3D162255C62500A86C31 /* MRMangaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRMangaViewModel.swift; sourceTree = "<group>"; };
+		AFFE3D182255CCE700A86C31 /* MRCharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRCharacterViewModel.swift; sourceTree = "<group>"; };
+		AFFE3D1A2255E9D000A86C31 /* MRMangaInfoDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRMangaInfoDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		AFFE3D1B2255E9D000A86C31 /* MRMangaInfoDescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRMangaInfoDescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		AFFE3D242255EFC600A86C31 /* MRDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRDescriptionViewModel.swift; sourceTree = "<group>"; };
+		AFFE3D262255F0A900A86C31 /* MRMangaInfoDescriptionSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRMangaInfoDescriptionSectionController.swift; sourceTree = "<group>"; };
+		AFFE3D2822560FD200A86C31 /* MRCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
+		AFFE3D2922560FD200A86C31 /* MRCharacterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRCharacterCollectionViewCell.xib; sourceTree = "<group>"; };
+		AFFE3D53225625C000A86C31 /* TextSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSize.swift; sourceTree = "<group>"; };
 		E0728034FDE802F2A4154AE1 /* Pods-MangaRock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaRock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MangaRock/Pods-MangaRock.debug.xcconfig"; sourceTree = "<group>"; };
 		F90A1B322217DF2600EFF735 /* MangaRock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaRock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9260D54221F047F00A07BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +91,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AFFE3D152255C60500A86C31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFFE3D162255C62500A86C31 /* MRMangaViewModel.swift */,
+				AFFE3D182255CCE700A86C31 /* MRCharacterViewModel.swift */,
+				AFFE3D242255EFC600A86C31 /* MRDescriptionViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AFFE3D222255EF6100A86C31 /* SectionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFFE3D0F2255B4FB00A86C31 /* MRMangaInfoAuthorSectionController.swift */,
+				AFFE3D262255F0A900A86C31 /* MRMangaInfoDescriptionSectionController.swift */,
+			);
+			path = SectionControllers;
+			sourceTree = "<group>";
+		};
+		AFFE3D232255EF9000A86C31 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AFFE3D112255B5A800A86C31 /* MRMangaInfoAuthorCollectionViewCell.swift */,
+				AFFE3D122255B5A800A86C31 /* MRMangaInfoAuthorCollectionViewCell.xib */,
+				AFFE3D1A2255E9D000A86C31 /* MRMangaInfoDescriptionCollectionViewCell.swift */,
+				AFFE3D1B2255E9D000A86C31 /* MRMangaInfoDescriptionCollectionViewCell.xib */,
+				AFFE3D2822560FD200A86C31 /* MRCharacterCollectionViewCell.swift */,
+				AFFE3D2922560FD200A86C31 /* MRCharacterCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AFFE3D522256259500A86C31 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AFFE3D53225625C000A86C31 /* TextSize.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		F90A1B292217DF2600EFF735 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +152,7 @@
 		F90A1B342217DF2600EFF735 /* MangaRock */ = {
 			isa = PBXGroup;
 			children = (
+				AFFE3D522256259500A86C31 /* Helpers */,
 				F9711817221F03F1003F57B5 /* Classes */,
 				F9711814221F0381003F57B5 /* Resources */,
 				F9711813221F036A003F57B5 /* Supporting Files */,
@@ -136,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				F971181A221F03F1003F57B5 /* MRMangaInfoCollectionViewController.swift */,
+				AFFE3D222255EF6100A86C31 /* SectionControllers */,
+				AFFE3D232255EF9000A86C31 /* Views */,
 			);
 			path = MangaInfo;
 			sourceTree = "<group>";
@@ -152,6 +219,7 @@
 		F9711820221F03F1003F57B5 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
+				AFFE3D152255C60500A86C31 /* Model */,
 				F9711823221F03F1003F57B5 /* MangaRock.xcdatamodeld */,
 				F9711821221F03F1003F57B5 /* MangaRock.sqlite-wal */,
 				F9711822221F03F1003F57B5 /* MangaRock.sqlite */,
@@ -223,8 +291,11 @@
 				F9711810221F0355003F57B5 /* LaunchScreen.storyboard in Resources */,
 				F971182B221F03F1003F57B5 /* MangaRock.sqlite in Resources */,
 				F971182A221F03F1003F57B5 /* MangaRock.sqlite-wal in Resources */,
+				AFFE3D1D2255E9D000A86C31 /* MRMangaInfoDescriptionCollectionViewCell.xib in Resources */,
+				AFFE3D142255B5A800A86C31 /* MRMangaInfoAuthorCollectionViewCell.xib in Resources */,
 				F971180A221F02D7003F57B5 /* Assets.xcassets in Resources */,
 				F9711827221F03F1003F57B5 /* Main.storyboard in Resources */,
+				AFFE3D2B22560FD200A86C31 /* MRCharacterCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,10 +327,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MangaRock/Pods-MangaRock-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,10 +347,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFFE3D172255C62500A86C31 /* MRMangaViewModel.swift in Sources */,
+				AFFE3D102255B4FB00A86C31 /* MRMangaInfoAuthorSectionController.swift in Sources */,
+				AFFE3D272255F0A900A86C31 /* MRMangaInfoDescriptionSectionController.swift in Sources */,
 				F9711826221F03F1003F57B5 /* MRMangaInfoCollectionViewController.swift in Sources */,
 				F971182C221F03F1003F57B5 /* MangaRock.xcdatamodeld in Sources */,
+				AFFE3D252255EFC600A86C31 /* MRDescriptionViewModel.swift in Sources */,
 				F9711828221F03F1003F57B5 /* MRAllMangaTableViewController.swift in Sources */,
 				F971182D221F03F1003F57B5 /* AppDelegate.swift in Sources */,
+				AFFE3D132255B5A800A86C31 /* MRMangaInfoAuthorCollectionViewCell.swift in Sources */,
+				AFFE3D2A22560FD200A86C31 /* MRCharacterCollectionViewCell.swift in Sources */,
+				AFFE3D1C2255E9D000A86C31 /* MRMangaInfoDescriptionCollectionViewCell.swift in Sources */,
+				AFFE3D54225625C000A86C31 /* TextSize.swift in Sources */,
+				AFFE3D192255CCE700A86C31 /* MRCharacterViewModel.swift in Sources */,
 				F9711829221F03F1003F57B5 /* MRMangaTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JA2TW5574P;
 				INFOPLIST_FILE = MangaRock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -444,6 +527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JA2TW5574P;
 				INFOPLIST_FILE = MangaRock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

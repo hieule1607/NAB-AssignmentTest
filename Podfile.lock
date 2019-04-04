@@ -1,18 +1,26 @@
 PODS:
+  - IGListKit (3.4.0):
+    - IGListKit/Default (= 3.4.0)
+  - IGListKit/Default (3.4.0):
+    - IGListKit/Diffing
+  - IGListKit/Diffing (3.4.0)
   - SDWebImage (4.4.5):
     - SDWebImage/Core (= 4.4.5)
   - SDWebImage/Core (4.4.5)
 
 DEPENDENCIES:
+  - IGListKit (~> 3.0)
   - SDWebImage
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - IGListKit
     - SDWebImage
 
 SPEC CHECKSUMS:
+  IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
   SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
 
-PODFILE CHECKSUM: 1e9f5a5529f7d6ea652fb6ea0ca23d2666a7725c
+PODFILE CHECKSUM: 144a6eab85f9e90a67a370c49e59663c2b816635
 
 COCOAPODS: 1.5.3

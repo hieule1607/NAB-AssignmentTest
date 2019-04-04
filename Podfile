@@ -6,5 +6,6 @@ target 'MangaRock' do
   use_frameworks!
 
   pod 'SDWebImage'
+  pod 'IGListKit', '~> 3.0'
 
 end

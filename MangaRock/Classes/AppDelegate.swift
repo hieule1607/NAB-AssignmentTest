@@ -37,9 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
         
         // Set managed object context to all manga view controller
-        let navigationController = self.window!.rootViewController as! UINavigationController
-        let allMangaTableViewController = navigationController.topViewController as! MRAllMangaTableViewController
-        allMangaTableViewController.managedObjectContext = self.persistentContainer.viewContext
+//        let navigationController = self.window!.rootViewController as! UINavigationController
+//        let allMangaTableViewController = navigationController.topViewController as! MRAllMangaTableViewController
+//        allMangaTableViewController.managedObjectContext = self.persistentContainer.viewContext
         
         return true
     }
@@ -102,3 +102,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 }
 
+let appdelegate = UIApplication.shared.delegate as! AppDelegate
+let context = appdelegate.persistentContainer.viewContext

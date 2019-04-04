@@ -7,83 +7,98 @@
 //
 
 import UIKit
+import CoreData
+import IGListKit
 
 private let reuseIdentifier = "Cell"
 
-class MRMangaInfoCollectionViewController: UICollectionViewController {
-
+class MRMangaInfoCollectionViewController: UICollectionViewController, NSFetchedResultsControllerDelegate {
+    
+    var selectedManga: MRManga?
+    
+    lazy var adapter: ListAdapter = {
+        return ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor.groupTableViewBackground
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        self.collectionView!.register(UINib(nibName: "MRMangaInfoAuthorCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MRMangaInfoAuthorCollectionViewCell")
+        
         // Do any additional setup after loading the view.
+        adapter.collectionView = collectionView
+        adapter.dataSource = self
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
-        // Configure the cell
+    // MARK: - Fetched results controller
+    var characterfetchedResultsController: NSFetchedResultsController<MRCharacter>? {
+        if _fetchedResultsController != nil {
+            return _fetchedResultsController!
+        }
+        
+        let fetchRequest: NSFetchRequest<MRCharacter> = MRCharacter.fetchRequest()
+        guard let item = selectedManga else { return nil }
+        fetchRequest.predicate = NSPredicate(format: "ANY mangas.mid == %i", item.mid)
+        
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+        _fetchedResultsController = fetchedResultsController
+        
+        do {
+            try _fetchedResultsController!.performFetch()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        
+        return _fetchedResultsController!
+    }
     
-        return cell
-    }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    var _fetchedResultsController: NSFetchedResultsController<MRCharacter>? = nil
     
+    // MARK: - GetData
+    func getDesCharacters() -> MRDescriptionViewModel? {
+        guard let characters = self.characterfetchedResultsController?.fetchedObjects, let manga = self.selectedManga else { return nil }
+        let charactersModel = characters.compactMap { MRCharacterViewModel.fromCoreData(character: $0)}
+        return MRDescriptionViewModel(manga: MRMangaViewModel.fromCoreData(manga: manga), characters: charactersModel)
     }
-    */
+    
+    func getMangaObject() -> MRMangaViewModel? {
+        guard let manga = selectedManga else { return nil }
+        return MRMangaViewModel.fromCoreData(manga: manga)
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.adapter.performUpdates(animated: true)
+    }
+    
+}
 
+// MARK: - ListAdapterDataSource
+extension MRMangaInfoCollectionViewController: ListAdapterDataSource {
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        let manga = getMangaObject()! //self.getCharacters()!
+        return [manga] + [self.getDesCharacters()!]
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        if object is MRMangaViewModel {
+            return MRMangaInfoAuthorSectionController()
+        } else {
+            return MRMangaInfoDescriptionSectionController()
+        }
+    }
+    
+    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+        return nil
+    }
+    
 }

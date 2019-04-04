@@ -13,7 +13,8 @@ import SDWebImage
 
 class MRAllMangaTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var managedObjectContext: NSManagedObjectContext?
+//    var managedObjectContext: NSManagedObjectContext?
+    var selectedIndex: IndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +62,7 @@ class MRAllMangaTableViewController: UITableViewController, NSFetchedResultsCont
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         aFetchedResultsController.delegate = self
         _fetchedResultsController = aFetchedResultsController
         
@@ -107,5 +108,18 @@ class MRAllMangaTableViewController: UITableViewController, NSFetchedResultsCont
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectedIndex = indexPath
+        return indexPath
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToMangaInfo", let mangaInfoVC = segue.destination as? MRMangaInfoCollectionViewController {
+            if let selected = selectedIndex {
+                mangaInfoVC.selectedManga = fetchedResultsController.object(at: selected)
+            }
+        }
     }
 }

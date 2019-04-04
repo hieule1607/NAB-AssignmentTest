@@ -24,10 +24,10 @@ class MRMangaInfoDescriptionCollectionViewCell: UICollectionViewCell {
             flowlayout.minimumLineSpacing = 16
         }
     }
-    // margin 80
+    
     static func cellSize(width: CGFloat, text: String) -> CGSize {
-        let textSize = TextSize.size(text, font: UIFont.systemFont(ofSize: 14), width: width, insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)).size
-        return CGSize(width: textSize.width, height: textSize.height + 80 + 36 + 136)
+        let textSize = TextSize.size(text, font: UIFont.systemFont(ofSize: 14), width: width, insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)).size
+        return CGSize(width: width, height: textSize.height + 72 + 36 + 122)
     }
 }
 

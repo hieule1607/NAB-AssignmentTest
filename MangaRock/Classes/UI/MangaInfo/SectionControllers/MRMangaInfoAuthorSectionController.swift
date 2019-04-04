@@ -19,7 +19,7 @@ final class MRMangaInfoAuthorSectionController: ListSectionController {
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
-        return CGSize(width: collectionContext!.containerSize.width, height: 380)
+        return MRMangaInfoAuthorCollectionViewCell.cellSize(width: collectionContext!.containerSize.width, name: manga?.name ?? "", author: manga?.authorName ?? "")
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
